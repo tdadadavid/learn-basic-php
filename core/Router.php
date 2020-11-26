@@ -26,7 +26,11 @@ class Router{
             return $this->routes[$uri];
         }
 
-        throw new Exception('route not defined for this URI');
+        try {
+            throw new Exception('route not defined for this URI');
+        }catch (Exception $e){
+            $e ->getMessage();
+        }
 
     }
 
