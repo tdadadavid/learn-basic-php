@@ -5,4 +5,4 @@
             <li><a href='contact'> Contact us </a></li>
             <li><a href='about/culture'> About Our Culture</a></li>
         </ul>
-    </nav>
+</nav>

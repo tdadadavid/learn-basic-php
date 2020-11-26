@@ -1,22 +1,5 @@
-<! Doctype>
-<html lang="en" >
+<?php require ('views/partials/head.php'); ?>
 
-<head>
-
-    <meta charset="UTF-8">
-    <title>Document</title>
-
-</head>
-
-<body>
     <h1>About us</h1>
 
-</body>
-
-
-<?php
-
-?>
-
-</html>
-
+<?php require ('views/partials/footer.php'); ?>

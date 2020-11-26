@@ -1,22 +1,13 @@
-<!Doctype html>
-<html lang="en" >
+<?php require ('views/partials/head.php'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel = "stylesheet" type = "text/css" href="/mypractice/public/css/style.css" >
-</head>
+    <h1 id="hello" >Hello, Daniel</h1>
 
-
-<body>
-
-    <?php require('partials/nav.php'); ?>
-    <h1>Hello, Daniel</h1>
+    <?php require('views/partials/nav.php'); ?>
 
     <h2 id="topic" ><strong>TODOS</strong></h2>
 
 
-
+        <ul>
             <?php foreach ($results as $task) : ?>
                 <li>
 
@@ -30,9 +21,7 @@
                 </li>
 
             <?php endforeach; ?>
+        </ul>
 
 
-
-</body>
-</html>
-
+<?php require ('views/partials/footer.php'); ?>
