@@ -21,17 +21,17 @@ class QueryBuilder{
 
     }
 
-    public  function updateTable($table){
+    function insertIntoTable($table){
 
-            $name = $_POST['name'];
             $description = $_POST['description'];
             $status = $_POST['status'];
 
-            $statement = $this ->pdo->prepare( "INSERT into {$table} VALUES ('$name' , '$description' , '$status')");
+//            var_dump($_POST);
+//            var_dump($table);
 
-            $statement -> execute();
+            $statement = $this ->pdo->prepare( "INSERT into {$table} (description, status) VALUES (?, ?)");
 
-            return $statement ->fetchAll( PDO::FETCH_OBJ);
+            return $statement->execute([$description, $status]);
     }
 
 
