@@ -22,16 +22,30 @@ class Router
     public function direct($uri , $requestMethodType)
     {
 
-//        var_dump($uri);
-//        var_dump($requestMethodType);
+//       var_dump($uri , $requestMethodType);
 
      if (array_key_exists($uri, $this->routes[$requestMethodType])) {
-            return $this->routes[$requestMethodType][$uri];
-        }else{
+
+         return $this ->callAction(
+             ... explode('@' , $this->routes[$requestMethodType][$uri])
+         );
+     }
+     else{
             throw new Exception('route not defined for this URI');
         }
     }
 
+    protected function callAction($controller ,  $action){
+
+//        die(var_dump($controller , $action));
+
+        if (! method_exists($controller , $action)){
+            throw new Exception(
+                "{$controller} does not respond to {$action} action"
+            );
+        }
+        return (new $controller) ->$action();
+    }
 
     public function get($uri , $controller){
         $this->routes['GET'][$uri] = $controller;

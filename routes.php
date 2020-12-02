@@ -3,10 +3,11 @@
 // skeletal structure of thr routes file
 // router -> POST_TYPE (URI , "controller file")
 
-$router -> get('' , 'controllers/index.php' );
-$router -> get('about' , 'controllers/about.php');
-$router -> POST('name' , 'controllers/add-name.php');
-$router -> GET('about/culture' , 'controllers/about-culture.php');
+$router -> get('' , 'pagesController@home' );
+$router -> get('about' , 'pagesController@about');
+$router -> GET('contact' , 'pagesController@contact');
+$router -> GET('about/culture' , 'pagesController@aboutCulture');
+$router -> POST('name' , 'add-name');
 
 
 //var_dump($router->routes);

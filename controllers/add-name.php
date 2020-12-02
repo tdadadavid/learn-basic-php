@@ -6,7 +6,7 @@
 
  if(isset($_POST['submit'])){
 //     var_dump($_POST);
-     if($app['database']->insertIntoTable('task.goals')){
+     if(App::get('database')->insertIntoTable('task.goals')){
          echo "Successfully Added";
      }else{
          echo "Failed";
